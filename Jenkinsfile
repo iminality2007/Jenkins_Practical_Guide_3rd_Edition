@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/wdpressplus/Jenkins_Practical_Guide_3rd_Edition.git'
+                git url: 'https://github.com/iminality2007/Jenkins_Practical_Guide_3rd_Edition.git'
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Global Tool Configuration で Maven 3.5.0 を設定していること。
-                    def mvnHome = tool 'Maven 3.5.0'
+                    def mvnHome = tool 'Maven 3.6.3'
                     if (env.OS == 'Windows_NT') {
                         bat "${mvnHome}/bin/mvn clean package"
                     } else {
